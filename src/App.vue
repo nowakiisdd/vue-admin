@@ -12,6 +12,6 @@ export default {
   components: {
     Layout,
   }
-};
+}
 </script>
 <style lang="stylus"></style>

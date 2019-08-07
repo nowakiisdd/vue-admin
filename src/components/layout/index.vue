@@ -1,16 +1,24 @@
 
+                                        
+
+
+
+
+              
+
+
 <template>
   <div class="layout">
     <Layout>
       <Sider ref="side1" hide-trigger collapsible :collapsed-width="78" v-model="isCollapsed">
         <Menu active-name="1-2" theme="dark" width="auto" :class="menuitemClasses">
           <MenuItem name="1-1">
-            <i class="el-icon-menu"></i>
-            <router-link tag="span" to="/home">首页</router-link>
+            <Icon type="ios-home" />
+            <router-link keep-alive tag="span" to="/home">首页</router-link>
           </MenuItem>
           <Submenu name="1">
             <template slot="title">
-              <Icon type="ios-navigate"></Icon>数据管理
+              <Icon type="ios-folder" />数据管理
             </template>
             <MenuItem name="1-1">
               <a href>用户列表</a>
@@ -30,47 +38,56 @@
           </Submenu>
           <Submenu name="2">
             <template slot="title">
-              <Icon type="ios-keypad"></Icon>添加数据
+              <Icon type="ios-paper" />添加数据
             </template>
             <MenuItem name="2-1">
-              <a href>添加商铺</a>
+              <router-link to="/add_data/add_shop">添加商铺</router-link>
             </MenuItem>
             <MenuItem name="2-2">
-              <a href>添加商品</a>
+              <!-- <router-link to="/add_data/add_food"> 添加商品 </router-link> -->
+              <router-link
+                :to="{
+                                    name: 'add_food'
+                                }"
+              >添加商品</router-link>
             </MenuItem>
           </Submenu>
           <Submenu name="3">
             <template slot="title">
-              <Icon type="ios-analytics"></Icon>图表
+              <Icon type="ios-pie" />图表
             </template>
             <MenuItem name="3-1">
-              <router-link to="/chart">用户分布</router-link>
+              <router-link keep-alive to="/chart">用户分布</router-link>
             </MenuItem>
           </Submenu>
           <Submenu name="4">
             <template slot="title">
-              <Icon type="ios-analytics"></Icon>编辑
+              <Icon type="md-create" />编辑
             </template>
             <MenuItem name="4-1">
-              <router-link to="/edit">文本编辑</router-link>
+              <router-link keep-alive to="/edit">文本编辑</router-link>
             </MenuItem>
           </Submenu>
           <Submenu name="5">
             <template slot="title">
-              <Icon type="ios-analytics"></Icon>设置
+              <Icon type="md-build" />设置
             </template>
             <MenuItem name="5-1">
-              <router-link to="/setting">管理员设置</router-link>
+              <router-link keep-alive to="/setting">管理员设置</router-link>
             </MenuItem>
           </Submenu>
           <Submenu name="6">
             <template slot="title">
-              <Icon type="ios-analytics"></Icon>说明
+              <Icon type="ios-information-circle" />说明
             </template>
             <MenuItem name="6-1">
-              <router-link to="/explain">说明</router-link>
+              <router-link keep-alive to="/explain">说明</router-link>
             </MenuItem>
           </Submenu>
+          <MenuItem name="7-1">
+            <i class="el-icon-menu"></i>
+            <router-link tag="span" to="/category">分类</router-link>
+          </MenuItem>
         </Menu>
       </Sider>
       <Layout>

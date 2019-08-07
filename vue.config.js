@@ -23,6 +23,10 @@ module.exports = {
             '/ajax': {//标识符 配置项目  标识符 选择域名后面的第一个
                 target: 'http://m.maoyan.com',//目标源
                 changeOrigin: true,//将上面的target修改为http://localhost:8080
+            },
+            '/index.php': {
+                target: 'http://www.qinqin.net',
+                changeOrigin: true
             }
         }
     }
