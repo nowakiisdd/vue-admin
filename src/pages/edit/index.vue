@@ -1,59 +1,22 @@
 <template>
   <div>
-    <div id="main" style="width: 600px;height:400px;" ref = "main"></div>
+    <vue-editor></vue-editor>
   </div>
 </template>
 
 <script>
-import echarts from 'echarts'
+import { VueEditor } from "vue2-editor/dist/vue2-editor.core.js";
+
 export default {
-  mounted () {
-    // 基于准备好的dom，初始化echarts实例
-    this.myChart = echarts.init( this.$refs.main );
-
-    // 指定图表的配置项和数据
-    var option = {
-      title : {
-          text: '某站点用户访问来源',
-          subtext: '纯属虚构',
-          x:'center'
-      },
-      tooltip : {
-          trigger: 'item',
-          formatter: "{a} <br/>{b} : {c} ({d}%)"
-      },
-      legend: {
-          orient: 'vertical',
-          left: 'left',
-          data: ['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
-      },
-      series : [
-          {
-              name: '访问来源',
-              type: 'pie',
-              radius : '55%',
-              center: ['50%', '60%'],
-              data:[
-                  {value:335, name:'直接访问'},
-                  {value:310, name:'邮件营销'},
-                  {value:234, name:'联盟广告'},
-                  {value:135, name:'视频广告'},
-                  {value:1548, name:'搜索引擎'}
-              ],
-              itemStyle: {
-                  emphasis: {
-                      shadowBlur: 10,
-                      shadowOffsetX: 0,
-                      shadowColor: 'rgba(0, 0, 0, 0.5)'
-                  }
-              }
-          }
-      ]
-  };
-
-
-    // 使用刚指定的配置项和数据显示图表。
-    this.myChart.setOption(option);
-  }
-}
+  components: { VueEditor }
+};
 </script>
+
+<style lang="css">
+@import "~vue2-editor/dist/vue2-editor.css";
+
+/* Import the Quill styles you want */
+@import '~quill/dist/quill.core.css';
+@import '~quill/dist/quill.bubble.css';
+@import '~quill/dist/quill.snow.css';
+</style>

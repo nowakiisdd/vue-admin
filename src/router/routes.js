@@ -1,15 +1,15 @@
-import Home from 'pages/home'
-import Setting from 'pages/setting'
-import Chart from 'pages/chart'
-import Explain from 'pages/explain'
-import Edit from 'pages/edit'
-import Error from 'pages/error'
-import AddData from 'pages/add_data'
-import AddShop from 'pages/add_data/add_shop'
-import AddFood from 'pages/add_data/add_food'
+const Home = () => import(/* webpackChunkName: "group-foo" */ 'pages/home')
+const Setting = () => import(/* webpackChunkName: "group-foo" */ 'pages/setting')
+const Chart = () => import(/* webpackChunkName: "group-foo" */ 'pages/chart')
+const Explain = () => import(/* webpackChunkName: "group-foo" */ 'pages/explain')
+const Edit = () => import(/* webpackChunkName: "group-foo" */ 'pages/edit')
+const Error = () => import(/* webpackChunkName: "group-foo" */ 'pages/error')
+const AddData = () => import(/* webpackChunkName: "group-foo" */ 'pages/add_data')
+const AddShop = () => import(/* webpackChunkName: "group-foo" */ 'pages/add_data/add_shop')
+const AddFood = () => import(/* webpackChunkName: "group-foo" */ 'pages/add_data/add_food')
 import CategoryRoute from './caregory'
-import List from 'pages/list'
-
+const List = () => import(/* webpackChunkName: "group-foo" */ 'pages/list')
+const ShopList = () => import(/* webpackChunkName: "group-foo" */ 'pages/shop_list')
 
 const routes = [
     {
@@ -31,6 +31,10 @@ const routes = [
     {
         path: '/explain',
         component: Explain
+    },
+    {
+        path: '/shop_list',
+        component: ShopList
     },
     {
         path: '/list/:id',

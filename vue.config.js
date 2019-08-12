@@ -8,7 +8,7 @@ module.exports = {
         config.resolve.alias //config 指的是webpack配置
             .set('assets', path.join(__dirname, './src/assets')) //.set(路径别名， 绝对路径)
             .set('stylesheets', path.join(__dirname, './src/assets/stylesheet'))
-            .set('commponents', path.join(__dirname, './src/components'))
+            .set('components', path.join(__dirname, './src/components'))
             .set('layout', path.join(__dirname, './src/components/layout'))
             .set('common', path.join(__dirname, './src/components/common'))
             .set('lib', path.join(__dirname, './src/lib'))
@@ -26,6 +26,10 @@ module.exports = {
             },
             '/index.php': {
                 target: 'http://www.qinqin.net',
+                changeOrigin: true
+            },
+            '/v1': {
+                target: 'https://elm.cangdu.org',
                 changeOrigin: true
             }
         }
